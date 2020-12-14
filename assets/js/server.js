@@ -11,5 +11,9 @@ app.use(express.json());
 
 // Route that sends the user to the index.html.
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'))
+    res.sendFile(path.join(__dirname, '../../index.html'))
+})
+
+app.listen(PORT, () => {
+    console.log(`App listening on PORT ${PORT}.`)
 })
