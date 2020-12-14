@@ -5,7 +5,7 @@ const $newNoteBtn = $(".new-note");
 const $noteList = $(".list-container .list-group");
 
 // const express = require('express')
-const database = require('../../db/db.json')
+// const database = require('../../db/db.json')
 
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
