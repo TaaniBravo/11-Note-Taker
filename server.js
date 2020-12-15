@@ -1,11 +1,11 @@
 const express = require('express');
-const { dirname } = require('path');
 const path = require('path')
+const fs = require('fs')
 
 const app = express()
 const PORT = process.env.PORT || 3000
 
-// const db = require('../../db/db.json')
+const db = require('./db/db.json');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -16,10 +16,16 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'))
 })
 
+// Route that sends the user to the notes.html
 app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/notes.html'))
 })
 
-app.listen(PORT, () => {
+app.get('/api/notes', (req, res) => {
+    res.json(db)
+})
+
+app.listen(PORT, (err) => {
+    if (err) console.error(err);
     console.log(`App listening on PORT ${PORT}.`)
 })
