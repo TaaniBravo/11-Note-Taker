@@ -4,8 +4,7 @@ const $saveNoteBtn = $(".save-note");
 const $newNoteBtn = $(".new-note");
 const $noteList = $(".list-container .list-group");
 
-// const express = require('express')
-// const database = require('../../db/db.json')
+// const noteIdCreate = $noteTitle.val().replace(/\s+/g, "").toLowerCase()
 
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
@@ -24,6 +23,7 @@ const saveNote = (note) => {
     url: "/api/notes",
     data: note,
     method: "POST",
+    // id: noteIdCreate
   });
 };
 
